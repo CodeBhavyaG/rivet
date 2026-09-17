@@ -1,6 +1,14 @@
 /**
  * Browser stubs for tealtiger's provider-SDK imports.
  *
+ * TODO(tealtiger): this shim (and the vite aliases in vite.config.ts) is a
+ * temporary workaround. Upstream tealtiger will make its provider SDKs
+ * (aws-sdk/bedrock, google-generative-ai, cohere-ai, mistral, openai, azure)
+ * lazy/optional so deterministic guardrails (PII/secret) import cleanly in a
+ * browser/ESM bundle — at which point this file and the aliases can be deleted
+ * with just a dependency version bump. See TealTiger follow-up issues filed
+ * from the governance-node PR review.
+ *
  * tealtiger's ESM bundle statically imports its LLM provider SDKs
  * (@aws-sdk/client-bedrock-runtime, @google/generative-ai, openai, cohere-ai,
  * @mistralai/mistralai, axios) even though classes like TealBedrock are only
